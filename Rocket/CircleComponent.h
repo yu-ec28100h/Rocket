@@ -19,3 +19,4 @@ private:
 };
 
 bool Intersect(const CircleComponent& a, const CircleComponent& b);
+bool IntersectToWall(const float a, const CircleComponent& b);

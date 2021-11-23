@@ -1,9 +1,12 @@
 #pragma once
 #include "Actor.h"
-#include "SpriteComponent.h"
 
-class Wall : public SpriteComponent
+class Wall : public Actor
 {
 public:
-	Wall(class Actor* owner, int drawOrder=20);
+	Wall(class Game* game);
+
+	void UpdateActor(float deltaTime) override;
+private:
+	class CircleComponent* mCircle;
 };

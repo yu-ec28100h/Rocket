@@ -165,6 +165,7 @@ xcopy "C:\SDL2_image-2.0.5\lib\x86\*.dll" "$(OutDir)" /i /s /y</Command>
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Ship.cpp" />
     <ClCompile Include="SpriteComponent.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
@@ -180,6 +181,7 @@ xcopy "C:\SDL2_image-2.0.5\lib\x86\*.dll" "$(OutDir)" /i /s /y</Command>
     <ClInclude Include="Random.h" />
     <ClInclude Include="Ship.h" />
     <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

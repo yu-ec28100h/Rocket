@@ -7,6 +7,7 @@
 #include "Asteroid.h"
 #include "Random.h"
 
+#include "Wall.h"
 #include "BGSpriteComponent.h"
 
 Game::Game()
@@ -160,6 +161,8 @@ void Game::LoadData()
 	mShip = new Ship(this);
 	mShip->SetPosition(Vector2(100.0f, 384.0f));
 	mShip->SetRotation(0);
+
+	wall = new Wall(this);
 
 	int numAsteroids = 5;
 	for (int i = 0; i < numAsteroids; i++)

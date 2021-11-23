@@ -47,5 +47,6 @@ private:
 	bool mUpdatingActors;
 
 	class Ship* mShip;
+	class Wall* wall;
 	std::vector<class Asteroid*> mAsteroids;
 };

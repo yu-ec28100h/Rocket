@@ -28,3 +28,10 @@ bool Intersect(const CircleComponent& a, const CircleComponent& b)
 
 	return distSq <= radiiSq;
 }
+
+bool IntersectToWall(const float a, const CircleComponent& b)
+{
+	float diff = b.GetCenter().x;
+
+	return diff <= a;
+}
