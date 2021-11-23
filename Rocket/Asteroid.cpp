@@ -9,7 +9,7 @@ Asteroid::Asteroid(Game* game)
 	:Actor(game)
 	,mCircle(nullptr)
 {
-	Vector2 randPos = Random::GetVector(Vector2::Zero, Vector2(1024.0f, 768.0f));
+	Vector2 randPos = Random::GetVector(Vector2(850.0f,0.0f), Vector2(1024.0f, 768.0f));
 	SetPosition(randPos);
 
 	SetRotation(Random::GetFloatRange(0.0f, 0.0f));
@@ -22,7 +22,6 @@ Asteroid::Asteroid(Game* game)
 
 	mCircle = new CircleComponent(this);
 	mCircle->SetRadius(40.0f);
-
 	game->AddAsteroid(this);
 }
 

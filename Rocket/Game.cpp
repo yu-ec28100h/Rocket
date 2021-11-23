@@ -102,6 +102,17 @@ void Game::UpdateGame()
 	}
 	mTicksCount = SDL_GetTicks();
 
+	if (Count >= 100)
+	{	
+		Count = 0;
+		int numAsteroids = 5;
+		for (int i = 0; i < numAsteroids; i++)
+		{
+			new Asteroid(this);
+		}
+	}
+	printf("%d\n", Count);
+
 	mUpdatingActors = true;
 	for (auto actor : mActors)
 	{
@@ -128,6 +139,7 @@ void Game::UpdateGame()
 	{
 		delete actor;
 	}
+	Count++;
 }
 
 void Game::GenerateOutput()
@@ -149,7 +161,7 @@ void Game::LoadData()
 	mShip->SetPosition(Vector2(100.0f, 384.0f));
 	mShip->SetRotation(0);
 
-	int numAsteroids = 20;
+	int numAsteroids = 5;
 	for (int i = 0; i < numAsteroids; i++)
 	{
 		new Asteroid(this);
@@ -175,6 +187,15 @@ void Game::LoadData()
 	};
 	bg->SetBGTectures(bgtexs);
 	bg->SetScrollSpeed(-200.0f);
+
+	Actor* temp2 = new Actor(this);
+	temp2->SetPosition(Vector2(64.0f, 384.0f));
+	bg = new BGSpriteCompoenet(temp2, 60);
+	bg->SetScreenSize(Vector2(128.0f, 768.0f));
+	bgtexs = {
+		GetTexture("Assets/Plane.png")
+	};
+	bg->SetBGTectures(bgtexs);
 }
 
 void Game::UnLoadData()
